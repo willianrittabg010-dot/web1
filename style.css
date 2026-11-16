@@ -43,3 +43,33 @@ footer {
 footer p {
     margin: 0;
 }
+
+.administracao h2 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.secao {
+    color: #304c3e;
+    border-color: #466254;
+    background-color: #fff;
+}
+
+.secao.ativa,
+.secao:hover {
+    color: #fff;
+    background-color: #466254;
+    border-color: #466254;
+}
+
+.administracao .table {
+    font-size: 14px;
+}
+
+.administracao td {
+    overflow-wrap: anywhere;
+}
+
+.administracao td:last-child {
+    min-width: 142px;
+}

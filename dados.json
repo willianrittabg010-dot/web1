@@ -1,0 +1,26 @@
+{
+    "projetos": [
+        {
+            "id": 1,
+            "nome": "Guia de Bagé",
+            "descricao": "Uma ideia de site para reunir lugares para visitar na cidade.",
+            "categoriaId": 1,
+            "tecnologiaId": 1
+        },
+        {
+            "id": 2,
+            "nome": "Lista de estudos",
+            "descricao": "Uma página para organizar as matérias e as tarefas da semana.",
+            "categoriaId": 2,
+            "tecnologiaId": 2
+        }
+    ],
+    "categorias": [
+        { "id": 1, "nome": "Sites" },
+        { "id": 2, "nome": "Ferramentas" }
+    ],
+    "tecnologias": [
+        { "id": 1, "nome": "HTML" },
+        { "id": 2, "nome": "JavaScript" }
+    ]
+}
