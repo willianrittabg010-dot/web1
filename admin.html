@@ -12,25 +12,25 @@
     <main class="administracao">
         <p><a href="index.html">Voltar para o catálogo</a></p>
         <h1>Área administrativa</h1>
-        <p class="small">As alterações ficam salvas neste navegador.</p>
+        <p>As alterações ficam salvas neste navegador.</p>
 
-        <nav class="d-flex flex-wrap gap-2 mb-4" aria-label="Cadastros">
-            <button class="btn btn-sm secao ativa" type="button" data-secao="projetos" aria-pressed="true">Projetos</button>
-            <button class="btn btn-sm secao" type="button" data-secao="categorias" aria-pressed="false">Categorias</button>
-            <button class="btn btn-sm secao" type="button" data-secao="tecnologias" aria-pressed="false">Tecnologias</button>
+        <nav class="mb-3" aria-label="Cadastros">
+            <button type="button" data-secao="projetos" aria-pressed="true">Projetos</button>
+            <button type="button" data-secao="categorias" aria-pressed="false">Categorias</button>
+            <button type="button" data-secao="tecnologias" aria-pressed="false">Tecnologias</button>
         </nav>
 
         <p id="mensagem" role="status">Carregando cadastros…</p>
         <noscript>Ative o JavaScript para usar os cadastros.</noscript>
         <section id="cadastro" aria-labelledby="titulo-secao" hidden>
             <h2 id="titulo-secao"></h2>
-            <form id="formulario" class="mb-4">
-                <div id="campos" class="row g-3 mb-3"></div>
-                <button id="salvar" class="btn btn-sm secao ativa" type="submit">Cadastrar</button>
-                <button id="cancelar" class="btn btn-sm btn-outline-secondary" type="button" hidden>Cancelar</button>
+            <form id="formulario" class="mb-3">
+                <div id="campos"></div>
+                <button id="salvar" type="submit">Cadastrar</button>
+                <button id="cancelar" type="button" hidden>Cancelar</button>
             </form>
             <div class="table-responsive">
-                <table class="table table-bordered align-middle">
+                <table>
                     <thead><tr id="colunas"></tr></thead>
                     <tbody id="registros"></tbody>
                 </table>

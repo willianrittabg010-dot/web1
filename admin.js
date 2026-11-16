@@ -56,7 +56,6 @@ function trocarSecao(novaSecao) {
     secao = novaSecao;
     botoes.forEach(botao => {
         const ativo = botao.dataset.secao === secao;
-        botao.classList.toggle('ativa', ativo);
         botao.setAttribute('aria-pressed', ativo);
     });
     mensagem.textContent = '';
@@ -73,32 +72,28 @@ function montarFormulario(registro = null) {
     campos.replaceChildren();
 
     for (const campo of camposPorSecao[secao]) {
-        const coluna = document.createElement('div');
-        coluna.className = campo.lista ? 'col-12 col-sm-6' : 'col-12';
+        const linha = document.createElement('p');
         const rotulo = document.createElement('label');
-        rotulo.className = 'form-label';
         rotulo.htmlFor = campo.chave;
         rotulo.textContent = campo.titulo;
 
         let entrada;
         if (campo.lista) {
             entrada = document.createElement('select');
-            entrada.className = 'form-select';
             entrada.add(new Option('Selecione', ''));
             for (const item of dados[campo.lista]) {
                 entrada.add(new Option(item.nome, item.id));
             }
         } else {
             entrada = document.createElement(campo.chave === 'descricao' ? 'textarea' : 'input');
-            entrada.className = 'form-control';
             entrada.maxLength = campo.chave === 'descricao' ? 500 : 100;
         }
         entrada.id = campo.chave;
         entrada.name = campo.chave;
         entrada.required = true;
         entrada.value = registro ? registro[campo.chave] : '';
-        coluna.append(rotulo, entrada);
-        campos.append(coluna);
+        linha.append(rotulo, entrada);
+        campos.append(linha);
     }
 
     const faltamCadastros = secao === 'projetos'
@@ -140,7 +135,6 @@ function mostrarRegistros() {
         const acoes = linha.insertCell();
         const editar = document.createElement('button');
         editar.type = 'button';
-        editar.className = 'btn btn-sm btn-outline-secondary me-1';
         editar.textContent = 'Editar';
         editar.addEventListener('click', () => {
             mensagem.textContent = '';
@@ -150,10 +144,9 @@ function mostrarRegistros() {
 
         const excluir = document.createElement('button');
         excluir.type = 'button';
-        excluir.className = 'btn btn-sm btn-outline-danger';
         excluir.textContent = 'Excluir';
         excluir.addEventListener('click', () => excluirRegistro(registro));
-        acoes.append(editar, excluir);
+        acoes.append(editar, ' ', excluir);
     }
 }
 

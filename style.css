@@ -49,27 +49,32 @@ footer p {
     margin-bottom: 15px;
 }
 
-.secao {
-    color: #304c3e;
-    border-color: #466254;
-    background-color: #fff;
+.administracao button[aria-pressed="true"] {
+    font-weight: bold;
 }
 
-.secao.ativa,
-.secao:hover {
-    color: #fff;
-    background-color: #466254;
-    border-color: #466254;
+.administracao label {
+    display: block;
 }
 
-.administracao .table {
-    font-size: 14px;
+.administracao input,
+.administracao textarea,
+.administracao select {
+    width: 100%;
+    max-width: 420px;
 }
 
+.administracao table {
+    width: 100%;
+    background: #fff;
+}
+
+.administracao th,
 .administracao td {
-    overflow-wrap: anywhere;
+    padding: 6px;
+    border: 1px solid #ccc;
 }
 
 .administracao td:last-child {
-    min-width: 142px;
+    white-space: nowrap;
 }
